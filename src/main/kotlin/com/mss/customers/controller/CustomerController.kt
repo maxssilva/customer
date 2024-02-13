@@ -6,6 +6,7 @@ import com.mss.customers.service.CustomerServiceImpl
 import com.mss.customers.utils.responseConverter
 import com.mss.customers.utils.toModel
 import jakarta.validation.Valid
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/customer")
-class   CustomerController (private val customerServiceImpl: CustomerServiceImpl){
+class   CustomerController (@Autowired private val customerServiceImpl: CustomerServiceImpl){
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class CustomerServiceImpl constructor(@Autowired private val customerRepository: CustomerRepository) : CustomerService {
+class CustomerServiceImpl(@Autowired private val customerRepository: CustomerRepository) : CustomerService {
 
-    override fun saveCustomer(customerRequest: CustomerRequest) {
+    override fun saveCustomer(customerRequest: CustomerRequest)  {
         validateCustomer(customerRequest)
-        customerRepository.saveCustomer(customerRequest.toModel())
+        customerRepository.save(customerRequest.toModel())
 
     }
 
