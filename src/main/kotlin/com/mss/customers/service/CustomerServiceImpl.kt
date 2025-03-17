@@ -10,14 +10,19 @@ import org.springframework.stereotype.Service
 class CustomerServiceImpl(@Autowired private val customerRepository: CustomerRepository) : CustomerService {
 
     override fun saveCustomer(customerRequest: CustomerRequest)  {
-        validateCustomer(customerRequest)
+        validateCustomer()
         customerRepository.save(customerRequest.toModel())
 
     }
 
-    private fun validateCustomer(customerRequest: CustomerRequest) {
-        require(customerRequest.name != null) { "Name must be informed" }
-        require(customerRequest.gender != null) { "Gender must be informed" }
-        require(customerRequest.birth_date != null) { "Birth date must be informed" }
+    override fun getCustomer(id: String) {
+        TODO("Not yet implemented")
+    }
+
+    private fun validateCustomer() {
+        TODO()
+        //require(true) { "Name must be informed" }
+//        require(true) { "Gender must be informed" }
+//        require(true) { "Birth date must be informed" }
     }
 }
